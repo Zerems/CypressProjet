@@ -1,9 +1,9 @@
 {
     "maritalStatus":"SINGLE",
-    "childNumberPropal":"CHILDNUMBERPROPAL_0",
+    "childNumberPropal":"0",
     "housingStatus":"TENANT",
     "housingStatusMonth":"01",
-    "housinStatusYear":"2020",
+    "housingStatusYear":"2020",
     "activitySector":"INDEPENDENT",
     "profession":"AUTO_ENTREPRENEUR",
     "businessActivityMonth":"02",
@@ -13,7 +13,7 @@
     "additionalIncome":"0",
     "rentAmount":"500",
     "loanCount":"1",
-    "type":"PERSONNAL_LOAN",
+    "type":"Prêt Personnel",
     "loanAmount":"20",
     "bankCode":"HSBC",
     "bankFrom":"2010"

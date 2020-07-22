@@ -20,14 +20,14 @@ context('Choose the options to get credit with profile 1', () => {
   it('Consumer choose his marital status', ()=>{
     cy.get("h2").should('contain', 'Votre situation familiale')
     cy.url().should('contain','familysituation')
-    cy.familyStatus(profile.maritalStatus, profile.chilNumberPropal)
+    cy.familyStatus(profile.maritalStatus, profile.childNumberPropal)
     cy.get('[type="checkbox"]').check({ force: true }).should('be.checked')
     cy.get('[data-test="navigator-compact-forward"]').click()
   })
   it('Consumer choose his housing statut',()=>{
     cy.get("h2").should('contain', 'Votre logement')
     cy.url().should('contain', '/housing')
-    cy.housingStatutUser(profile.housinStatus, profile.housingStatusMonth,profile.housingStatusYear)
+    cy.housingStatutUser(profile.housingStatus, profile.housingStatusMonth,profile.housingStatusYear)
     cy.get('[type="checkbox"]').uncheck({ force: true })
     cy.get('[data-test="navigator-compact-forward"]').click()
   })
@@ -35,7 +35,7 @@ context('Choose the options to get credit with profile 1', () => {
   it('Consummer choose his job', () =>{
       cy.get("h2").should('contain', 'Votre situation professionnelle')
      cy.url().should('contain', '/professionalsituation')
-     cy.activityUser(profile.activitySector, profile.profession, profile.bunsinessActivityMonth,profile.businessActivityYear)
+     cy.activityUser(profile.activitySector, profile.profession, profile.businessActivityMonth,profile.businessActivityYear)
      cy.get('option').should('contain','Indépendants / Travailleurs non salariés')
      cy.get('option').should('contain','Auto-Entrepreneur')
       cy.get('[data-di-id="di-id-d838032c-320c79b9"] > label').click()
