@@ -16,6 +16,21 @@
     "type":"Prêt Personnel",
     "loanAmount":"20",
     "bankCode":"HSBC",
-    "bankFrom":"2010"
+    "bankFrom":"2010",
+    "email":"michel.sapin@gmail.com",
+    "projectSelect":"NEWCAR",
+    "amount":"2K",
+    "creditMaturity":"M12",
+    "gender":"#GENDERCODE_M",
+    "lastName":"Sapin",
+    "firstName":"Michel",
+    "dayBirth":"23",
+    "monthBirth":"09",
+    "yearBirth":"1985",
+    "postalCodeBirth":"33100",
+    "personnalNumber":"0646166574",
+    "userAddress":"10 rue de la Libération",
+    "userPostalCode":"33000",
+    "userCountry":"France"
 
 }

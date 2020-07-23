@@ -4,19 +4,20 @@ context('Choose the options to get credit with profile 1', () => {
   before(() => {
     cy.visit("https://www.younited-credit.com/")
     cy.wait(2000)
-    cy.title().should('include','Le Crédit')
-    cy.get('#projectSelect').select('NEWCAR')
-    cy.get('option').should('contain','Véhicule neuf')
-    cy.get('#amount').select('2K')
-    cy.get('option').should('contain','2000 €')
-    cy.get('#creditMaturity').select('M12')
-    cy.get('option').should('contain','12 mois')
-    cy.get('[data-di-id=di-id-bca9a80c-4fc29f73]').click()
+  })
+    it('Start process on LandingPage',()=>{
+      cy.title().should('include','Le Crédit')
+      cy.startProcess(profile.projectSelect, profile.amount, profile.creditMaturity)
+      cy.get('[data-di-id=di-id-bca9a80c-4fc29f73]').click()
+    })
+   it('Enter email', ()=>{
     cy.url().should('include', '/email')
     cy.get("h2").should('contain', 'Découvrez votre offre de prêt de')
-    cy.typeLogin({ email: 'michel.sapin@gmail.com'})
+    cy.typeLogin(profile.email)
     cy.get('[data-test=navigator-compact-forward]').click()
-})
+
+   })
+    
   it('Consumer choose his marital status', ()=>{
     cy.get("h2").should('contain', 'Votre situation familiale')
     cy.url().should('contain','familysituation')
@@ -33,13 +34,11 @@ context('Choose the options to get credit with profile 1', () => {
   })
   
   it('Consummer choose his job', () =>{
-      cy.get("h2").should('contain', 'Votre situation professionnelle')
-     cy.url().should('contain', '/professionalsituation')
-     cy.activityUser(profile.activitySector, profile.profession, profile.businessActivityMonth,profile.businessActivityYear)
-     cy.get('option').should('contain','Indépendants / Travailleurs non salariés')
-     cy.get('option').should('contain','Auto-Entrepreneur')
-      cy.get('[data-di-id="di-id-d838032c-320c79b9"] > label').click()
-     cy.get('[data-test="navigator-compact-forward"]').click()
+    cy.get("h2").should('contain', 'Votre situation professionnelle')
+    cy.url().should('contain', '/professionalsituation')
+    cy.activityUser(profile.activitySector, profile.profession, profile.businessActivityMonth,profile.businessActivityYear)
+    cy.get('[data-di-id="di-id-d838032c-320c79b9"] > label').click()
+    cy.get('[data-test="navigator-compact-forward"]').click()
   })
   
   it('Consumer give his salary',()=>{
@@ -53,8 +52,6 @@ context('Choose the options to get credit with profile 1', () => {
     cy.get("h2").should('contain', 'Vos charges mensuelles')
     cy.url().should('contain', '/outcomes')
     cy.outcomesUser(profile.rentAmount, profile.loanCount, profile.type, profile.loanAmount)
-    cy.get('option').should('contain','1')
-    cy.get('option').should('contain','Prêt Personnel')
     cy.get('[data-test="navigator-compact-forward"]').click()
   })
   
@@ -62,7 +59,18 @@ context('Choose the options to get credit with profile 1', () => {
     cy.get("h2").should('contain','Votre banque')
     cy.url().should('contain', '/bank')
     cy.bankUser(profile.bankCode, profile.bankFrom)
-    cy.get('option').should('contain','HSBC')
     cy.get('[data-test=navigator-compact-forward]').click()
-  }) 
+  })
+  it('Consumer give personnal info',()=>{
+    cy.get("h2").should('contain','Vos informations')
+    cy.url().should('contain','/identity')
+    cy.personnalInfo(profile.gender,profile.lastName,profile.firstName,profile.dayBirth,profile.monthBirth,profile.yearBirth,profile.postalCodeBirth)
+    cy.get('[data-test=navigator-compact-forward]').click()
+  })
+  it('Consumer give his contact',()=>{
+    cy.get("h2").should('contain','Vos coordonnées')
+    cy.url().should('contain','/contact')
+    cy.userContact(profile.personnalNumber,profile.userAddress,profile.userPostalCode,profile.userCountry)
+    cy.get('[data-test=navigator-compact-forward]').click()
+  })
 })
