@@ -1,0 +1,297 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 10,
+    "passes": 5,
+    "pending": 0,
+    "failures": 5,
+    "start": "2020-07-24T09:03:15.855Z",
+    "end": "2020-07-24T09:03:53.462Z",
+    "duration": 37607,
+    "testsRegistered": 10,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e309a208-4ac8-4067-8bbf-62eda599967b",
+      "title": "",
+      "fullFile": "cypress/integration/CasDeTestsProfile1.spec.js",
+      "file": "cypress/integration/CasDeTestsProfile1.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+          "title": "Choose the options to get credit with profile 1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Start process on LandingPage",
+              "fullTitle": "Choose the options to get credit with profile 1 Start process on LandingPage",
+              "timedOut": null,
+              "duration": 5190,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.title().should('include', 'Le Crédit');\ncy.startProcess(profile.projectSelect, profile.amount, profile.creditMaturity);\ncy.get('[data-di-id=di-id-bca9a80c-4fc29f73]').click();",
+              "err": {},
+              "uuid": "511b479c-1e92-4bdf-9310-2ef0c0e92881",
+              "parentUUID": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Enter email",
+              "fullTitle": "Choose the options to get credit with profile 1 Enter email",
+              "timedOut": null,
+              "duration": 2167,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.url().should('include', '/email');\ncy.get(\"h2\").should('contain', 'Découvrez votre offre de prêt de');\ncy.typeLogin(profile.email);\ncy.get('[data-test=navigator-compact-forward]').click();",
+              "err": {},
+              "uuid": "0ddbd8dc-23a4-4469-bb68-2ebc415cbee8",
+              "parentUUID": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Consumer choose his marital status",
+              "fullTitle": "Choose the options to get credit with profile 1 Consumer choose his marital status",
+              "timedOut": null,
+              "duration": 696,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h2\").should('contain', 'Votre situation familiale');\ncy.url().should('contain', 'familysituation');\ncy.familyStatus(profile.maritalStatus, profile.childNumberPropal);\ncy.get('[type=\"checkbox\"]').check({\n  force: true\n}).should('be.checked');\ncy.get('[data-test=\"navigator-compact-forward\"]').click();",
+              "err": {},
+              "uuid": "c1db5a37-6a2d-4144-80a4-0dabed2ac469",
+              "parentUUID": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Consumer choose his housing statut",
+              "fullTitle": "Choose the options to get credit with profile 1 Consumer choose his housing statut",
+              "timedOut": null,
+              "duration": 918,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h2\").should('contain', 'Votre logement');\ncy.url().should('contain', '/housing');\ncy.housingStatutUser(profile.housingStatus, profile.housingStatusMonth, profile.housingStatusYear);\ncy.get('[type=\"checkbox\"]').uncheck({\n  force: true\n});\ncy.get('[data-test=\"navigator-compact-forward\"]').click();",
+              "err": {},
+              "uuid": "174b5481-176b-4048-8ba5-592d5c07849c",
+              "parentUUID": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Consummer choose his job",
+              "fullTitle": "Choose the options to get credit with profile 1 Consummer choose his job",
+              "timedOut": null,
+              "duration": 3055,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h2\").should('contain', 'Votre situation professionnelle');\ncy.url().should('contain', '/professionalsituation');\ncy.activityUser(profile.activitySector, profile.profession, profile.businessActivityMonth, profile.businessActivityYear);\ncy.get('[data-di-id=\"di-id-d838032c-320c79b9\"] > label').click();\ncy.get('[data-test=\"navigator-compact-forward\"]').click();",
+              "err": {},
+              "uuid": "7c324576-966c-4ab2-94c1-24a15b3bf924",
+              "parentUUID": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Consumer give his salary",
+              "fullTitle": "Choose the options to get credit with profile 1 Consumer give his salary",
+              "timedOut": null,
+              "duration": 4778,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h2\").should('contain', 'Vos revenus mensuels');\ncy.url().should('contain', '/incomes');\ncy.salaryUser(profile.mainIncome, profile.housingAssistance, profile.additionalIncome);\ncy.get('[data-test=\"navigator-compact-forward\"]').click();",
+              "err": {
+                "message": "CypressError: Timed out retrying: `cy.type()` failed because this element is `disabled`:\n\n`<input _ngcontent-sbu-c51=\"\" type=\"tel\" placeholder=\"€/mois\" id=\"coIncome-input\" disabled=\"\" class=\"ng-untouched ng-pristine\" maxlength=\"6\" data-di-id=\"#coIncome-input\" data-di-field-id=\"coIncome\">`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying: `cy.type()` failed because this element is `disabled`:\n\n`<input _ngcontent-sbu-c51=\"\" type=\"tel\" placeholder=\"€/mois\" id=\"coIncome-input\" disabled=\"\" class=\"ng-untouched ng-pristine\" maxlength=\"6\" data-di-id=\"#coIncome-input\" data-di-field-id=\"coIncome\">`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at $Cy.ensureNotDisabled (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:159656:24)\n    at runAllChecks (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:148809:14)\n    at retryActionability (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:148865:16)\n    at tryCatcher (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:10130:23)\n    at Function.Promise.attempt.Promise.try (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:7404:29)\n    at tryFn (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:162938:24)\n    at whenStable (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:162979:12)\n    at https://www.younited-credit.com/__cypress/runner/cypress_runner.js:162502:16\n    at tryCatcher (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:10130:23)\n    at Promise._settlePromiseFromHandler (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:8065:31)\n    at Promise._settlePromise (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:8122:18)\n    at Promise._settlePromise0 (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:8167:10)\n    at Promise._settlePromises (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:8247:18)\n    at Promise._fulfill (https://www.younited-credit.com/__cypress/runner/cypress_runner.js:8191:18)\n    at https://www.younited-credit.com/__cypress/runner/cypress_runner.js:9805:46\nFrom Your Spec Code:\n    at Context.eval (https://www.younited-credit.com/__cypress/tests?p=cypress/support/index.js:51:31)",
+                "diff": null
+              },
+              "uuid": "43a6a687-6881-4a09-89dd-2a11872c333d",
+              "parentUUID": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Consumer give his outcomes",
+              "fullTitle": "Choose the options to get credit with profile 1 Consumer give his outcomes",
+              "timedOut": null,
+              "duration": 4526,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h2\").should('contain', 'Vos charges mensuelles');\ncy.url().should('contain', '/outcomes');\ncy.outcomesUser(profile.rentAmount, profile.loanCount, profile.type, profile.loanAmount);\ncy.get('[data-test=\"navigator-compact-forward\"]').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<h2.title-5.d-inline-block.pr-1>' to contain 'Vos charges mensuelles'",
+                "estack": "AssertionError: Timed out retrying: expected '<h2.title-5.d-inline-block.pr-1>' to contain 'Vos charges mensuelles'\n    at Context.eval (https://www.younited-credit.com/__cypress/tests?p=cypress/integration/CasDeTestsProfile1.spec.js:98:18)",
+                "diff": null
+              },
+              "uuid": "9f998bba-052e-48c8-bdb9-a04bde589dc4",
+              "parentUUID": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Consumer give his Bank",
+              "fullTitle": "Choose the options to get credit with profile 1 Consumer give his Bank",
+              "timedOut": null,
+              "duration": 4781,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h2\").should('contain', 'Votre banque');\ncy.url().should('contain', '/bank');\ncy.bankUser(profile.bankCode, profile.bankFrom);\ncy.get('[data-test=navigator-compact-forward]').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<h2.title-5.d-inline-block.pr-1>' to contain 'Votre banque'",
+                "estack": "AssertionError: Timed out retrying: expected '<h2.title-5.d-inline-block.pr-1>' to contain 'Votre banque'\n    at Context.eval (https://www.younited-credit.com/__cypress/tests?p=cypress/integration/CasDeTestsProfile1.spec.js:104:18)",
+                "diff": null
+              },
+              "uuid": "164c01f4-d92a-4035-88cc-5a6ad7ce1cdd",
+              "parentUUID": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Consumer give personnal info",
+              "fullTitle": "Choose the options to get credit with profile 1 Consumer give personnal info",
+              "timedOut": null,
+              "duration": 4804,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h2\").should('contain', 'Vos informations');\ncy.url().should('contain', '/identity');\ncy.personnalInfo(profile.maritalStatus, profile.gender, profile.lastName, profile.firstName, null, profile.dayBirth, profile.monthBirth, profile.yearBirth, profile.postalCodeBirth);\ncy.get('[data-test=navigator-compact-forward]').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<h2.title-5.d-inline-block.pr-1>' to contain 'Vos informations'",
+                "estack": "AssertionError: Timed out retrying: expected '<h2.title-5.d-inline-block.pr-1>' to contain 'Vos informations'\n    at Context.eval (https://www.younited-credit.com/__cypress/tests?p=cypress/integration/CasDeTestsProfile1.spec.js:110:18)",
+                "diff": null
+              },
+              "uuid": "f00015a6-e91e-4d90-9734-c06e2940f2d2",
+              "parentUUID": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Consumer give his contact",
+              "fullTitle": "Choose the options to get credit with profile 1 Consumer give his contact",
+              "timedOut": null,
+              "duration": 4821,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"h2\").should('contain', 'Vos coordonnées');\ncy.url().should('contain', '/contact');\ncy.userContact(profile.personnalNumber, profile.userAddress, profile.userPostalCode, profile.userCountry);\ncy.get('[data-test=navigator-compact-forward]').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<h2.title-5.d-inline-block.pr-1>' to contain 'Vos coordonnées'",
+                "estack": "AssertionError: Timed out retrying: expected '<h2.title-5.d-inline-block.pr-1>' to contain 'Vos coordonnées'\n    at Context.eval (https://www.younited-credit.com/__cypress/tests?p=cypress/integration/CasDeTestsProfile1.spec.js:116:18)",
+                "diff": null
+              },
+              "uuid": "21bdad75-8157-4ba9-a8e6-cf466425b33e",
+              "parentUUID": "fa6df570-7e43-41b9-9bf9-fdc08bfc5980",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "511b479c-1e92-4bdf-9310-2ef0c0e92881",
+            "0ddbd8dc-23a4-4469-bb68-2ebc415cbee8",
+            "c1db5a37-6a2d-4144-80a4-0dabed2ac469",
+            "174b5481-176b-4048-8ba5-592d5c07849c",
+            "7c324576-966c-4ab2-94c1-24a15b3bf924"
+          ],
+          "failures": [
+            "43a6a687-6881-4a09-89dd-2a11872c333d",
+            "9f998bba-052e-48c8-bdb9-a04bde589dc4",
+            "164c01f4-d92a-4035-88cc-5a6ad7ce1cdd",
+            "f00015a6-e91e-4d90-9734-c06e2940f2d2",
+            "21bdad75-8157-4ba9-a8e6-cf466425b33e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 35736,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
