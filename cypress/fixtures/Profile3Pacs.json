@@ -1,0 +1,58 @@
+
+{
+    "email":"michel.sapin@gmail.com",
+    "projectSelect":"NEWCAR",
+    "amount":"2K",
+    "creditMaturity":"M12",
+
+    "maritalStatus":"COHABITING",
+    "childNumberPropal":"0",
+
+    "housingStatus":"Logé(e) par le(la) conjoint(e)",
+    "housingStatusMonth":"04",
+    "housingStatusYear":"1999",
+
+    "activitySector":"RETIRED",
+    "profession":"RETIRED_FROM_PUBLIC_SECTOR",
+    "pensionMonth":"09",
+    "pensionYear":"2019",
+
+    "mainIncome":"2000",
+    "housingAssistance":"0",
+    "additionalIncome":"0",
+
+    "loanCount":"0",
+    "rentAmount":"890",
+    "coIncome":"2300",
+
+    "bankCode":"CIC",
+    "bankFrom":"1989",
+
+    "gender":"#GENDERCODE_M",
+    "lastName":"Sapin",
+    "firstName":"Michel",
+    "dayBirth":"23",
+    "monthBirth":"09",
+    "yearBirth":"1955",
+    "postalCodeBirth":"33100",
+    "personnalNumber":"0646166574",
+    "userAddress":"10 rue de la Libération",
+    "userPostalCode":"33000",
+    "userCountry":"France",
+
+    "partnerActivitySector": "Salarié(e) du secteur privé",
+    "partnerProfession":"Cadre supérieur",
+    "partnerContract":"CONTRACTTYPE_CDI",
+    "partnerEmployedM":"05",
+    "partnerEmployedY":"2000",
+    
+   
+    "genderpartner":"MLLE",
+    "lastNamePartner":"Aubry",
+    "firstNamePartner":"Myrtille",
+    "dayBirthPartner":"02",
+    "monthBirthPartner":"05",
+    "yearBirthPartner":"1970",
+    "postalCodeBirthPartner":"33000"
+
+}

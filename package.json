@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "cy:run:report": "cypress run --record --key $RECORDID --browser chrome --headless --reporter mochawesome",
+    "cy:run:report:html": "rimraf mochawesome-report cypress/results mochawesome.json && cypress run --browser chrome --reporter mochawesome"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.10.0"
+    "cypress": "^4.10.0",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.1.0",
+    "mochawesome-report-generator": "^5.1.0"
   }
 }

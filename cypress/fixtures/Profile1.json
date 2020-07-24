@@ -1,13 +1,21 @@
 {
+    "projectSelect":"NEWCAR",
+    "amount":"2K",
+    "creditMaturity":"M12",
+    "email":"michel.sapin@gmail.com",
+
     "maritalStatus":"SINGLE",
     "childNumberPropal":"0",
+
     "housingStatus":"TENANT",
     "housingStatusMonth":"01",
     "housingStatusYear":"2020",
+
     "activitySector":"INDEPENDENT",
     "profession":"AUTO_ENTREPRENEUR",
     "businessActivityMonth":"02",
     "businessActivityYear":"2019",
+
     "mainIncome":"2000",
     "housingAssistance":"0",
     "additionalIncome":"0",
@@ -15,19 +23,18 @@
     "loanCount":"1",
     "type":"Prêt Personnel",
     "loanAmount":"20",
+
     "bankCode":"HSBC",
     "bankFrom":"2010",
-    "email":"michel.sapin@gmail.com",
-    "projectSelect":"NEWCAR",
-    "amount":"2K",
-    "creditMaturity":"M12",
-    "gender":"#GENDERCODE_M",
+    
+    "gender":"M",
     "lastName":"Sapin",
     "firstName":"Michel",
     "dayBirth":"23",
     "monthBirth":"09",
     "yearBirth":"1985",
     "postalCodeBirth":"33100",
+    
     "personnalNumber":"0646166574",
     "userAddress":"10 rue de la Libération",
     "userPostalCode":"33000",

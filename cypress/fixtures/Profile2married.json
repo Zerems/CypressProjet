@@ -1,0 +1,59 @@
+{
+    "email":"michel.sapin@gmail.com",
+    "projectSelect":"NEWCAR",
+    "amount":"2K",
+    "creditMaturity":"M12",
+
+    "maritalStatus":"Marié(e)",
+    "childNumberPropal":"0",
+
+    "housingStatus":"Propriétaire (avec crédit immobilier en cours)",
+    "housingStatusMonth":"03",
+    "housingStatusYear":"2010",
+
+    "activitySector":"Salarié(e) du secteur privé",
+    "profession":"Cadre supérieur",
+    "contractType":"CONTRACTTYPE_CDI",
+    "employedFromMonth":"09",
+    "employedFromYear":"2010",
+
+    "mainIncome":"2000",
+    "housingAssistance":"0",
+    "additionalIncome":"0",
+
+    "loanCount":"0",
+    "mortgageAmount":"860",
+    "coIncome":"2300",
+
+    "bankCode":"LCL",
+    "bankFrom":"2005",
+
+    "gender":"M",
+    "lastName":"Sapin",
+    "firstName":"Michel",
+    "dayBirth":"23",
+    "monthBirth":"09",
+    "yearBirth":"1985",
+    "postalCodeBirth":"33100",
+    "personnalNumber":"0646166574",
+    "userAddress":"10 rue de la Libération",
+    "userPostalCode":"33000",
+    "userCountry":"France",
+
+    "partnerActivitySector": "Salarié(e) du secteur privé",
+    "partnerProfession":"Cadre supérieur",
+    "partnerContract":"CONTRACTTYPE_CDI",
+    "partnerEmployedM":"05",
+    "partnerEmployedY":"2000",
+    
+   
+    "genderpartner":"MME",
+    "lastNamePartner":"Sapin",
+    "firstNamePartner":"Myrtille",
+    "maidenName":"Aubry",
+    "dayBirthPartner":"02",
+    "monthBirthPartner":"05",
+    "yearBirthPartner":"1970",
+    "postalCodeBirthPartner":"33000"
+
+}

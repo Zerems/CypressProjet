@@ -64,7 +64,7 @@ context('Choose the options to get credit with profile 1', () => {
   it('Consumer give personnal info',()=>{
     cy.get("h2").should('contain','Vos informations')
     cy.url().should('contain','/identity')
-    cy.personnalInfo(profile.gender,profile.lastName,profile.firstName,profile.dayBirth,profile.monthBirth,profile.yearBirth,profile.postalCodeBirth)
+    cy.personnalInfo(profile.maritalStatus, profile.gender,profile.lastName,profile.firstName, null, profile.dayBirth,profile.monthBirth,profile.yearBirth,profile.postalCodeBirth)
     cy.get('[data-test=navigator-compact-forward]').click()
   })
   it('Consumer give his contact',()=>{
