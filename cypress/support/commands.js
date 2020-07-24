@@ -16,22 +16,22 @@ Cypress.Commands.add('housingStatutUser', (housingStatus, housingStatusMonth, ho
   cy.get('#housingStatusFrom-input-year').type(housingStatusYear).should('have.class', 'ng-valid')
 })
 Cypress.Commands.add('activityUser',(activitySector,profession, businessActivityMonth,businessActivityYear,contractType,employedFromMonth,employedFromYear,pensionMonth,pensionYear) =>{
+  cy.get('#activitySector-input').select(activitySector).should('have.class', 'ng-valid')
+  cy.wait(2000)
   if(activitySector != "RETIRED"){
-    cy.get('#activitySector-input').select(activitySector).should('have.class', 'ng-valid')
     cy.get('#profession-input').select(profession).should('have.class', 'ng-valid')
     cy.wait(2000)
     if(profession == "AUTO_ENTREPRENEUR"){
       cy.get('#businessActivityStartDate-input-month').type(businessActivityMonth).should('have.class', 'ng-valid')
       cy.get('#businessActivityStartDate-input-year').type(businessActivityYear).should('have.class', 'ng-valid')
     }
-    if(profession != "AUTO_ENTREPRENEUR"){
+    if(profession == "Cadre supérieur"){
       cy.get('#contractType-input').select(contractType).should('have.class', 'ng-valid')
       cy.get('#employedFrom-input-month').type(employedFromMonth).should('have.class', 'ng-valid')
       cy.get('#employedFrom-input-year').type(employedFromYear).should('have.class', 'ng-valid')
     }
   }
   if(activitySector == "RETIRED"){
-    cy.get('#activitySector-input').select(activitySector).should('have.class', 'ng-valid')
     cy.get('#profession-input').select(profession).should('have.class', 'ng-valid')
     cy.wait(2000)
     cy.get('#pensionFrom-input-month').type(pensionMonth).should('have.class', 'ng-valid')
@@ -50,7 +50,7 @@ Cypress.Commands.add('salaryUser',(mainIncome, coIncome, housingAssistance, addi
   }
 })
 Cypress.Commands.add('partnerActivity',(partnerActivitySector, partnerProfession, partnerContract,partnerEmployedM,partnerEmployedY)=>{
-  cy.get('#partnerActivitySector-input').select(partnerActivitySector).should('have.class', 'ng-valid')
+    cy.get('#partnerActivitySector-input').select(partnerActivitySector).should('have.class', 'ng-valid')
     cy.get('#partnerProfession-input').select(partnerProfession).should('have.class', 'ng-valid')
     cy.get('#partnerContractType-input').select(partnerContract).should('have.class', 'ng-valid')
     cy.get('#partnerEmployedFrom-input-month').type(partnerEmployedM).should('have.class', 'ng-valid')
