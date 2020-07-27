@@ -1,9 +1,10 @@
 {
-    "reporter": "mochawesome",
+  "reporter": "mochawesome",
   "reporterOptions": {
-        "reportDir": "cypress/results",
-        "overwrite": false,
-        "html": true,
-        "json": true
-    }
+    "reportDir": "cypress/results",
+    "overwrite": false,
+    "html": true,
+    "json": true
+  },
+  "projectId": "cooxci"
 }

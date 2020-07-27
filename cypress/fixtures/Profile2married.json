@@ -42,7 +42,7 @@
 
     "partnerActivitySector": "Salarié(e) du secteur privé",
     "partnerProfession":"Cadre supérieur",
-    "partnerContract":"CONTRACTTYPE_CDI",
+    "partnerContract":"CDI",
     "partnerEmployedM":"05",
     "partnerEmployedY":"2000",
     

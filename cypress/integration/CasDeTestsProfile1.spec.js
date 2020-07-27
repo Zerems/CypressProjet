@@ -44,7 +44,7 @@ context('Choose the options to get credit with profile 1', () => {
   it('Consumer give his salary',()=>{
     cy.get("h2").should('contain', 'Vos revenus mensuels')
     cy.url().should('contain', '/incomes')
-    cy.salaryUser(profile.mainIncome, profile.housingAssistance, profile.additionalIncome)
+    cy.salaryUser(profile.maritalStatus,profile.mainIncome, profile.housingAssistance, profile.additionalIncome)
     cy.get('[data-test="navigator-compact-forward"]').click()
   })
   

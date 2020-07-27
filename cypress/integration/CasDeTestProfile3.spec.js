@@ -33,7 +33,7 @@ context('Choose the options to get credit with profile3', () => {
    it('Consumer choose his job',()=>{
     cy.url().should('include', '/professionalsituation')
     cy.get("h2").should('contain', 'Votre situation professionnelle')
-    cy.activityUser(pacs.activitySector,pacs.profession,pacs.pensionMonth,pacs.pensionYear)
+    cy.activityUser(pacs.activitySector,pacs.profession,null,null,null,null,null,pacs.pensionMonth,pacs.pensionYear)
     cy.get('[data-test=navigator-compact-forward]').click()
    })
    it('Consumer choose his partner job',()=>{
@@ -45,13 +45,13 @@ context('Choose the options to get credit with profile3', () => {
  it('Consumer give his salary',()=>{
     cy.url().should('include', '/incomes')
     cy.get("h2").should('contain', 'Vos revenus mensuels')
-    cy.salaryUser(pacs.mainIncome, pacs.coIncome, pacs.housingAssistance, pacs.additionalIncome,pacs.maritalStatus)
+    cy.salaryUser(pacs.maritalStatus,pacs.mainIncome, pacs.coIncome, pacs.housingAssistance, pacs.additionalIncome)
     cy.get('[data-test=navigator-compact-forward]').click()
  })
  it('Consumer give his outcomes',()=>{
     cy.url().should('include', '/outcomes')
     cy.get("h2").should('contain', 'Vos charges mensuelles')
-    cy.outcomeUser(null,pacs.rentAmount,pacs.loanCount,null,null)
+    cy.outcomesUser(pacs.housingStatus,null,pacs.loanCount,pacs.rentAmount,null,null)
     cy.get('[data-test=navigator-compact-forward]').click()  
  })   
  it('Consumer give his bank', ()=>{
@@ -63,13 +63,13 @@ context('Choose the options to get credit with profile3', () => {
  it('Consumer give personnal info',()=>{
   cy.get("h2").should('contain','Vos informations')
   cy.url().should('contain','/identity')
-  cy.personnalInfo(pacs.maritalStatus, pacs.gender,pacs.lastName,pacs.firstName, null, pacs.dayBirth,pacs.monthBirth,pacs.yearBirth,pacs.postalCodeBirth)
+  cy.personnalInfo(pacs.gender,pacs.lastName,pacs.firstName,pacs.dayBirth,pacs.monthBirth,pacs.yearBirth,pacs.postalCodeBirth)
   cy.get('[data-test=navigator-compact-forward]').click()
 })
 it('Consumer give Partner personnal info',()=>{
   cy.get("h2").should('contain','Les informations de votre conjoint')
   cy.url().should('contain','/partneridentity')
-  cy.personnalInfo(pacs.maritalStatus,pacs.genderPartner,pacs.lastNamePartner,pacs.firstNamePartner, null, pacs.dayBirthPartner,pacs.monthBirthPartner,pacs.yearBirthPartner,pacs.postalCodeBirthPartner)
+  cy.partnerInfoPerso(pacs.maidenName,pacs.genderpartner,pacs.lastNamePartner,pacs.firstNamePartner, pacs.dayBirthPartner,pacs.monthBirthPartner,pacs.yearBirthPartner,pacs.postalCodeBirthPartner)
   cy.get('[data-test=navigator-compact-forward]').click()
 })
 it('Consumer give his contact',()=>{

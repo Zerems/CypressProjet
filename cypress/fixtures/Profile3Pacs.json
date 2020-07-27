@@ -28,7 +28,7 @@
     "bankCode":"CIC",
     "bankFrom":"1989",
 
-    "gender":"#GENDERCODE_M",
+    "gender":"M",
     "lastName":"Sapin",
     "firstName":"Michel",
     "dayBirth":"23",
@@ -42,7 +42,7 @@
 
     "partnerActivitySector": "Salarié(e) du secteur privé",
     "partnerProfession":"Cadre supérieur",
-    "partnerContract":"CONTRACTTYPE_CDI",
+    "partnerContract":"CDI",
     "partnerEmployedM":"05",
     "partnerEmployedY":"2000",
     

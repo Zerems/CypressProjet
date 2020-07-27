@@ -39,15 +39,19 @@ Cypress.Commands.add('activityUser',(activitySector,profession, businessActivity
   }
 
 })
-Cypress.Commands.add('salaryUser',(mainIncome, coIncome, housingAssistance, additionalIncome,maritalStatus) =>{
-  cy.get('#mainIncome-input').type(mainIncome).should('have.class', 'ng-valid')
-  if(maritalStatus == "Marié(e)"||"COHABITING"){
-    cy.get('#coIncome-input').type(coIncome).should('have.class', 'ng-valid')
-  }
-  if(maritalStatus == "SINGLE"){
+Cypress.Commands.add('salaryUser',(maritalStatus,mainIncome,coIncome, housingAssistance, additionalIncome) =>{
+  if(maritalStatus == "Célibataire"){
+    cy.get('#mainIncome-input').type(mainIncome).should('have.class', 'ng-valid')
     cy.get('#housingAssistance-input').type(housingAssistance).should('have.class', 'ng-valid')
     cy.get('#additionalIncome-input').type(additionalIncome).should('have.class', 'ng-valid')
   }
+  if(maritalStatus == "Marié(e)"||"COHABITING"){
+    cy.get('#mainIncome-input').type(mainIncome).should('have.class', 'ng-valid')
+    cy.get('#coIncome-input').type(coIncome).should('have.class', 'ng-valid')
+    cy.get('#housingAssistance-input').type(housingAssistance).should('have.class', 'ng-valid')
+    cy.get('#additionalIncome-input').type(additionalIncome).should('have.class', 'ng-valid')
+  }
+
 })
 Cypress.Commands.add('partnerActivity',(partnerActivitySector, partnerProfession, partnerContract,partnerEmployedM,partnerEmployedY)=>{
     cy.get('#partnerActivitySector-input').select(partnerActivitySector).should('have.class', 'ng-valid')
@@ -56,31 +60,55 @@ Cypress.Commands.add('partnerActivity',(partnerActivitySector, partnerProfession
     cy.get('#partnerEmployedFrom-input-month').type(partnerEmployedM).should('have.class', 'ng-valid')
     cy.get('#partnerEmployedFrom-input-year').type(partnerEmployedY).should('have.class', 'ng-valid')
 })
-Cypress.Commands.add('outcomesUser',(mortgageAmount,rentAmount, loanCount, type, loanAmount) =>{
-    cy.get('#rentAmount-input').type(rentAmount).should('have.class', 'ng-valid')
-    cy.get('#loanCount-input').select(loanCount).should('have.class', 'ng-valid')
-    cy.get('#type-input').select(type).should('have.class', 'ng-valid')
-    cy.get('#loanAmount-input').type(loanAmount).should('have.class', 'ng-valid')
-    cy.get('#mortgageAmount-input').type(mortgageAmount).should('have.class', 'ng-valid')
-    cy.get('#loanCount-input').select(loanCount).should('have.class', 'ng-valid')
-  cy.wait(2000)  
-  
+Cypress.Commands.add('outcomesUser',(housingStatus,mortgageAmount,loanCount,rentAmount,loanAmount,type) =>{
+    if(housingStatus == "Propriétaire (avec crédit immobilier en cours)" ){
+      cy.get('#mortgageAmount-input').type(mortgageAmount).should('have.class', 'ng-valid')
+      cy.get('#loanCount-input').select(loanCount).should('have.class', 'ng-valid')
+    }
+    if(housingStatus == "Logé(e) par le(la) conjoint(e)"){
+      cy.get('#rentAmount-input').type(rentAmount).should('have.class', 'ng-valid')
+      cy.get('#loanCount-input').select(loanCount).should('have.class', 'ng-valid')
+      if(loanCount != "0"){
+        cy.get('#type-input').select(type).should('have.class', 'ng-valid')
+        cy.get('#loanAmount-input').type(loanAmount).should('have.class', 'ng-valid')
+      }
+    }
+    
+  cy.wait(2000)    
 })
 Cypress.Commands.add('bankUser', (bankCode, bankFrom)=>{
   cy.get('#bankCode-input').select(bankCode).should('have.class', 'ng-valid')
   cy.get('#bankFrom-input-year').type(bankFrom).should('have.class', 'ng-valid')
 })
-Cypress.Commands.add('personnalInfo',(maritalStatus, gender, lastName, firstName, maidenName, dayBirth,monthBirth,yearBirth,postalCodeBirth)=>{
-  cy.get('#GENDERCODE_'+ gender).check({ force: true }).should('be.checked')
-  cy.get('#lastName-input').type(lastName).should('have.class', 'ng-valid')
-  cy.get('#firstName-input').type(firstName).should('have.class', 'ng-valid')
-  if(maritalStatus == 'MARRIED') {
+Cypress.Commands.add('personnalInfo',(gender, lastName, firstName, dayBirth,monthBirth,yearBirth,postalCodeBirth)=>{
+    cy.get('#GENDERCODE_'+ gender).check({ force: true }).should('be.checked')
+    cy.get('#lastName-input').type(lastName).should('have.class', 'ng-valid')
+    cy.get('#firstName-input').type(firstName).should('have.class', 'ng-valid')
+    cy.get('#dateOfBirth-input-day').type(dayBirth).should('have.class', 'ng-valid')
+    cy.get('#dateOfBirth-input-month').type(monthBirth).should('have.class', 'ng-valid')
+    cy.get('#dateOfBirth-input-year').type(yearBirth).should('have.class', 'ng-valid')
+    cy.get('#postalCode-input').type(postalCodeBirth).should('have.class', 'ng-valid')
+    cy.get('#city-input').should('have.class', 'ng-valid')
+  })
+  
+Cypress.Commands.add('partnerInfoPerso',(maidenName,genderpartner,lastNamePartner,firstNamePartner,dayBirthPartner,monthBirthPartner,yearBirthPartner,postalCodeBirthPartner)=>{
+  cy.get('#GENDERCODE_'+ genderpartner).check({ force: true }).should('be.checked')
+  if(genderpartner == "MME"){
+    cy.get('#lastName-input').type(lastNamePartner).should('have.class', 'ng-valid')
     cy.get('#maidenName-input').type(maidenName).should('have.class', 'ng-valid')
+    cy.get('#firstName-input').type(firstNamePartner).should('have.class', 'ng-valid')
+    cy.get('#dateOfBirth-input-day').type(dayBirthPartner).should('have.class', 'ng-valid')
+    cy.get('#dateOfBirth-input-month').type(monthBirthPartner).should('have.class', 'ng-valid')
+    cy.get('#dateOfBirth-input-year').type(yearBirthPartner).should('have.class', 'ng-valid')
+    cy.get('#postalCode-input').type(postalCodeBirthPartner).should('have.class', 'ng-valid')
   }
-  cy.get('#dateOfBirth-input-day').type(dayBirth).should('have.class', 'ng-valid')
-  cy.get('#dateOfBirth-input-month').type(monthBirth).should('have.class', 'ng-valid')
-  cy.get('#dateOfBirth-input-year').type(yearBirth).should('have.class', 'ng-valid')
-  cy.get('#postalCode-input').type(postalCodeBirth).should('have.class', 'ng-valid')
+  if(genderpartner == "MLLE")
+  cy.get('#lastName-input').type(lastNamePartner).should('have.class', 'ng-valid')
+  cy.get('#firstName-input').type(firstNamePartner).should('have.class', 'ng-valid')
+  cy.get('#dateOfBirth-input-day').type(dayBirthPartner).should('have.class', 'ng-valid')
+  cy.get('#dateOfBirth-input-month').type(monthBirthPartner).should('have.class', 'ng-valid')
+  cy.get('#dateOfBirth-input-year').type(yearBirthPartner).should('have.class', 'ng-valid')
+  cy.get('#postalCode-input').type(postalCodeBirthPartner).should('have.class', 'ng-valid')
   cy.get('#city-input').should('have.class', 'ng-valid')
   cy.wait(2000)
 })
