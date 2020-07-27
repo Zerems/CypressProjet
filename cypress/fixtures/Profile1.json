@@ -17,8 +17,8 @@
     "businessActivityYear":"2019",
 
     "mainIncome":"2000",
-    "housingAssistance":"0",
-    "additionalIncome":"0",
+    "housingAssistance":"200",
+    "additionalIncome":"100",
     "rentAmount":"500",
     "loanCount":"1",
     "type":"Prêt Personnel",

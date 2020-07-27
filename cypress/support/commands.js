@@ -44,14 +44,14 @@ Cypress.Commands.add('salaryUser',(maritalStatus,mainIncome,coIncome, housingAss
     cy.get('#mainIncome-input').type(mainIncome).should('have.class', 'ng-valid')
     cy.get('#housingAssistance-input').type(housingAssistance).should('have.class', 'ng-valid')
     cy.get('#additionalIncome-input').type(additionalIncome).should('have.class', 'ng-valid')
+    cy.get('[data-test="navigator-compact-forward"]').click()
   }
-  if(maritalStatus == "Marié(e)"||"COHABITING"){
+  if(maritalStatus == "Marié(e)"||maritalStatus =="COHABITING"){
     cy.get('#mainIncome-input').type(mainIncome).should('have.class', 'ng-valid')
     cy.get('#coIncome-input').type(coIncome).should('have.class', 'ng-valid')
     cy.get('#housingAssistance-input').type(housingAssistance).should('have.class', 'ng-valid')
     cy.get('#additionalIncome-input').type(additionalIncome).should('have.class', 'ng-valid')
   }
-
 })
 Cypress.Commands.add('partnerActivity',(partnerActivitySector, partnerProfession, partnerContract,partnerEmployedM,partnerEmployedY)=>{
     cy.get('#partnerActivitySector-input').select(partnerActivitySector).should('have.class', 'ng-valid')
@@ -65,7 +65,7 @@ Cypress.Commands.add('outcomesUser',(housingStatus,mortgageAmount,loanCount,rent
       cy.get('#mortgageAmount-input').type(mortgageAmount).should('have.class', 'ng-valid')
       cy.get('#loanCount-input').select(loanCount).should('have.class', 'ng-valid')
     }
-    if(housingStatus == "Logé(e) par le(la) conjoint(e)"){
+    if(housingStatus == "Logé(e) par le(la) conjoint(e)" || housingStatus == "TENANT" ){
       cy.get('#rentAmount-input').type(rentAmount).should('have.class', 'ng-valid')
       cy.get('#loanCount-input').select(loanCount).should('have.class', 'ng-valid')
       if(loanCount != "0"){

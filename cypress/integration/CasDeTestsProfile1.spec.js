@@ -44,14 +44,14 @@ context('Choose the options to get credit with profile 1', () => {
   it('Consumer give his salary',()=>{
     cy.get("h2").should('contain', 'Vos revenus mensuels')
     cy.url().should('contain', '/incomes')
-    cy.salaryUser(profile.maritalStatus,profile.mainIncome, profile.housingAssistance, profile.additionalIncome)
-    cy.get('[data-test="navigator-compact-forward"]').click()
+    cy.salaryUser(profile.maritalStatus,profile.mainIncome,profile.coIncome,profile.housingAssistance,profile.additionalIncome)
+    
   })
   
   it('Consumer give his outcomes', ()=> {
     cy.get("h2").should('contain', 'Vos charges mensuelles')
     cy.url().should('contain', '/outcomes')
-    cy.outcomesUser(profile.rentAmount, profile.loanCount, profile.type, profile.loanAmount)
+    cy.outcomesUser(profile.housingStatus,profile.mortgageAmount,profile.loanCount,profile.rentAmount,profile.loanAmount,profile.type)
     cy.get('[data-test="navigator-compact-forward"]').click()
   })
   
@@ -64,7 +64,7 @@ context('Choose the options to get credit with profile 1', () => {
   it('Consumer give personnal info',()=>{
     cy.get("h2").should('contain','Vos informations')
     cy.url().should('contain','/identity')
-    cy.personnalInfo(profile.maritalStatus, profile.gender,profile.lastName,profile.firstName, null, profile.dayBirth,profile.monthBirth,profile.yearBirth,profile.postalCodeBirth)
+    cy.personnalInfo(profile.gender, profile.lastName, profile.firstName, profile.dayBirth,profile.monthBirth,profile.yearBirth,profile.postalCodeBirth)
     cy.get('[data-test=navigator-compact-forward]').click()
   })
   it('Consumer give his contact',()=>{
